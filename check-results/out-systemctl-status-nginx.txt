@@ -1,0 +1,26 @@
+# $ systemctl status nginx
+
+● nginx.service - A high performance web server and a reverse proxy server
+     Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+     Active: active (running) since Wed 2022-02-02 17:38:45 UTC; 1h 18min ago
+       Docs: man:nginx(8)
+   Main PID: 3436 (nginx)
+      Tasks: 5 (limit: 28688)
+     Memory: 12.7M
+     CGroup: /system.slice/nginx.service
+             ├─ 3436 nginx: master process /usr/sbin/nginx -g daemon on; master_process on;
+             ├─22241 nginx: worker process
+             ├─22242 nginx: worker process
+             ├─22243 nginx: worker process
+             └─22244 nginx: worker process
+
+Feb 02 17:38:44 taa.example.com systemd[1]: Starting A high performance web server and a reverse proxy server...
+Feb 02 17:38:45 taa.example.com systemd[1]: Started A high performance web server and a reverse proxy server.
+Feb 02 18:10:24 taa.example.com systemd[1]: Reloading A high performance web server and a reverse proxy server.
+Feb 02 18:10:24 taa.example.com systemd[1]: Reloaded A high performance web server and a reverse proxy server.
+Feb 02 18:26:38 taa.example.com systemd[1]: Reloading A high performance web server and a reverse proxy server.
+Feb 02 18:26:38 taa.example.com nginx[20023]: nginx: [emerg] "fastcgi_pass" directive is duplicate in /etc/nginx/sites-enabled/nginx-local-default:28
+Feb 02 18:26:38 taa.example.com systemd[1]: nginx.service: Control process exited, code=exited, status=1/FAILURE
+Feb 02 18:26:38 taa.example.com systemd[1]: Reload failed for A high performance web server and a reverse proxy server.
+Feb 02 18:35:11 taa.example.com systemd[1]: Reloading A high performance web server and a reverse proxy server.
+Feb 02 18:35:11 taa.example.com systemd[1]: Reloaded A high performance web server and a reverse proxy server.

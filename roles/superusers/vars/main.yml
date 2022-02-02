@@ -1,0 +1,9 @@
+---
+
+# sudo-superusers-group ( sudo -i ==> root )
+group: superusers
+
+# users to include in sudo-superusers-group
+users:
+- user2
+- user3

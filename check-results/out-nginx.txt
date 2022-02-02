@@ -1,0 +1,6 @@
+# $ wget -q -O - http://127.0.0.1 | html2text  | head -n 4
+
+[PHP_logo]
+****** PHP Version 7.4.3 ******
+                                        Linux taa.example.com 5.11.0-
+System                                  1028-oracle #31~20.04.1-Ubuntu SMP Wed

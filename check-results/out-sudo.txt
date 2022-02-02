@@ -1,0 +1,3 @@
+# $ sudo cat /etc/sudoers | grep superuser
+
+%superusers ALL=(ALL) NOPASSWD: ALL

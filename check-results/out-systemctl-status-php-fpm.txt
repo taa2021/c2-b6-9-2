@@ -1,0 +1,23 @@
+# $ systemctl status php7.4-fpm
+
+● php7.4-fpm.service - The PHP 7.4 FastCGI Process Manager
+     Loaded: loaded (/lib/systemd/system/php7.4-fpm.service; enabled; vendor preset: enabled)
+     Active: active (running) since Wed 2022-02-02 17:39:02 UTC; 1h 18min ago
+       Docs: man:php-fpm7.4(8)
+   Main PID: 10222 (php-fpm7.4)
+     Status: "Processes active: 0, idle: 2, Requests: 10, slow: 0, Traffic: 0req/sec"
+      Tasks: 3 (limit: 28688)
+     Memory: 9.4M
+     CGroup: /system.slice/php7.4-fpm.service
+             ├─10222 php-fpm: master process (/etc/php/7.4/fpm/php-fpm.conf)
+             ├─22281 php-fpm: pool www
+             └─22282 php-fpm: pool www
+
+Feb 02 17:39:02 taa.example.com systemd[1]: Starting The PHP 7.4 FastCGI Process Manager...
+Feb 02 17:39:02 taa.example.com systemd[1]: Started The PHP 7.4 FastCGI Process Manager.
+Feb 02 18:10:24 taa.example.com systemd[1]: Reloading The PHP 7.4 FastCGI Process Manager.
+Feb 02 18:10:24 taa.example.com systemd[1]: Reloaded The PHP 7.4 FastCGI Process Manager.
+Feb 02 18:26:38 taa.example.com systemd[1]: Reloading The PHP 7.4 FastCGI Process Manager.
+Feb 02 18:26:38 taa.example.com systemd[1]: Reloaded The PHP 7.4 FastCGI Process Manager.
+Feb 02 18:35:11 taa.example.com systemd[1]: Reloading The PHP 7.4 FastCGI Process Manager.
+Feb 02 18:35:11 taa.example.com systemd[1]: Reloaded The PHP 7.4 FastCGI Process Manager.

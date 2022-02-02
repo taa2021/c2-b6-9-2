@@ -1,0 +1,46 @@
+---
+
+- name: remove default nginx package site config
+  ansible.builtin.file:
+    path: "{{ nginx_sites_enabled }}/default"
+    state: absent
+  notify:
+    - reload webservices
+
+- name: create site doc root
+  ansible.builtin.file:
+    path: "{{ nginx_site_doc_root }}"
+    state: directory
+
+- name: copy site index page
+  ansible.builtin.copy:
+    src: "{{ nginx_site_doc_index }}"
+    dest: "{{ nginx_site_doc_root }}/"
+    owner: root
+    group: root
+    mode: '0644'
+
+- name: copy nginx site config
+  ansible.builtin.template:
+    src: "{{ nginx_site_conf_templ }}"
+    dest: "{{ nginx_sites_available }}/{{ nginx_site_conf_file }}"
+    owner: root
+    group: root
+    mode: '0644'
+  notify:
+    - reload webservices
+
+- name: enable nginx site
+  ansible.builtin.file:
+    src: "{{ nginx_sites_available }}/{{ nginx_site_conf_file }}"
+    dest: "{{ nginx_sites_enabled }}/{{ nginx_site_conf_file }}"
+    state: link
+  notify:
+    - reload webservices
+
+- name: allow connections on http port with iptables
+  ansible.builtin.iptables:
+    chain: INPUT
+    protocol: tcp
+    destination_port: '80'
+    jump: ACCEPT

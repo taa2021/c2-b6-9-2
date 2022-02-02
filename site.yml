@@ -1,0 +1,10 @@
+---
+- name: SF ansible task
+  hosts: all
+  remote_user: ubuntu
+  become: yes
+
+  roles:
+    - dnsmasq
+    - superusers
+    - webservices

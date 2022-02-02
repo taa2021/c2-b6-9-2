@@ -1,0 +1,20 @@
+# $ systemctl status dnsmasq
+
+● dnsmasq.service - dnsmasq - A lightweight DHCP and caching DNS server
+     Loaded: loaded (/lib/systemd/system/dnsmasq.service; enabled; vendor preset: enabled)
+     Active: active (running) since Wed 2022-02-02 18:52:08 UTC; 4min 25s ago
+   Main PID: 25487 (dnsmasq)
+      Tasks: 1 (limit: 28688)
+     Memory: 872.0K
+     CGroup: /system.slice/dnsmasq.service
+             └─25487 /usr/sbin/dnsmasq -x /run/dnsmasq/dnsmasq.pid -u dnsmasq -7 /etc/dnsmasq.d,.dpkg-dist,.dpkg-old,.dpkg-new --local-service --trust-anchor=.,20326,8,2,e06d44b80b8f1d39a95c0b0d7c65d08458e880409bbc683457104237c7f8ec8d
+
+Feb 02 18:52:08 taa.example.com systemd[1]: Starting dnsmasq - A lightweight DHCP and caching DNS server...
+Feb 02 18:52:08 taa.example.com dnsmasq[25478]: dnsmasq: syntax check OK.
+Feb 02 18:52:08 taa.example.com dnsmasq[25487]: started, version 2.80 cachesize 150
+Feb 02 18:52:08 taa.example.com dnsmasq[25487]: DNS service limited to local subnets
+Feb 02 18:52:08 taa.example.com dnsmasq[25487]: compile time options: IPv6 GNU-getopt DBus i18n IDN DHCP DHCPv6 no-Lua TFTP conntrack ipset auth nettlehash DNSSEC loop-detect inotify dumpfile
+Feb 02 18:52:08 taa.example.com dnsmasq[25487]: using nameserver 4.4.4.4#53
+Feb 02 18:52:08 taa.example.com dnsmasq[25487]: using nameserver 8.8.8.8#53
+Feb 02 18:52:08 taa.example.com dnsmasq[25487]: read /etc/hosts - 9 addresses
+Feb 02 18:52:08 taa.example.com systemd[1]: Started dnsmasq - A lightweight DHCP and caching DNS server.

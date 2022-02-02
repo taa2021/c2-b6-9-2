@@ -1,0 +1,20 @@
+---
+
+# config file
+nginx_site_conf_templ: nginx-local-default.j2
+nginx_site_conf_file: nginx-local-default
+nginx_site_doc_index: index.php
+nginx_site_doc_root: /opt/nginx/ansible
+nginx_sites_enabled: /etc/nginx/sites-enabled
+nginx_sites_available: /etc/nginx/sites-available
+
+# the os packages for service
+packages:
+- nginx
+- php-fpm=2:7.4+*
+
+# the system services for service
+services:
+- nginx
+- php7.4-fpm
+

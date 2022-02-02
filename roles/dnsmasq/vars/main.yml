@@ -1,0 +1,12 @@
+---
+
+# config file
+conf_file: /etc/dnsmasq.conf
+
+# the os packages for service
+packages:
+- dnsmasq
+
+# the system services for service
+services:
+- dnsmasq

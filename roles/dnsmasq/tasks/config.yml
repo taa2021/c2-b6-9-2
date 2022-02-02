@@ -1,0 +1,34 @@
+---
+
+- name: add no-resolv so dnsmasq does not needlessly read /etc/resolv.conf which only contains the localhost addresses of itself
+  ansible.builtin.lineinfile:
+    path: "{{ conf_file }}"
+    regexp: '^no-resolv'
+    insertafter: '^#no-resolv'
+    line: no-resolv
+  notify:
+    - restart dnsmasq
+
+- name: set google-recurse-server 8.8.8.8
+  ansible.builtin.lineinfile:
+    path: "{{ conf_file }}"
+    regexp: 'server=8.8.8.8'
+    line: server=8.8.8.8
+  notify:
+    - restart dnsmasq
+
+- name: set google-recurse-server 4.4.4.4
+  ansible.builtin.lineinfile:
+    path: "{{ conf_file }}"
+    regexp: 'server=4.4.4.4'
+    line: server=4.4.4.4
+  notify:
+    - restart dnsmasq
+
+- name: set /etc/resolv.conf
+  ansible.builtin.copy:
+    src: resolv.conf
+    dest: /etc/resolv.conf
+    owner: root
+    group: root
+    mode: 0644
